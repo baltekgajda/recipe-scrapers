@@ -70,6 +70,7 @@ from .kennymcgovern import KennyMcGovern
 from .kingarthur import KingArthur
 from .kochbar import Kochbar
 from .kuchniadomowa import KuchniaDomowa
+from .kwestiasmaku import KwestiaSmaku
 from .littlespicejar import LittleSpiceJar
 from .livelytable import LivelyTable
 from .lecremedelacrumb import LeCremeDeLaCrumb
@@ -130,11 +131,9 @@ from .whatsgabycooking import WhatsGabyCooking
 from .wholefoods import WholeFoods
 from .wikicookbook import WikiCookbook
 from .yummly import Yummly
-from .kwestiasmaku import KwestiaSmaku
 
 
 SCRAPERS = {
-    KwestiaSmaku.host(): KwestiaSmaku,
     Abril.host(): Abril,
     ACoupleCooks.host(): ACoupleCooks,
     AllRecipes.host(): AllRecipes,
@@ -206,6 +205,7 @@ SCRAPERS = {
     KingArthur.host(): KingArthur,
     Kochbar.host(): Kochbar,
     KuchniaDomowa.host(): KuchniaDomowa,
+    KwestiaSmaku.host(): KwestiaSmaku,
     LittleSpiceJar.host(): LittleSpiceJar,
     LivelyTable.host(): LivelyTable,
     LeCremeDeLaCrumb.host(): LeCremeDeLaCrumb,

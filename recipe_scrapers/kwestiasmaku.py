@@ -1,27 +1,75 @@
 from ._abstract import AbstractScraper
-from ._utils import normalize_string
+
+from ._utils import normalize_string, get_yields
 
 
 class KwestiaSmaku(AbstractScraper):
     @classmethod
     def host(cls):
-        return "kwestiasmaku.com"
+        return 'kwestiasmaku.com'
+
+    def author(self):
+        return ''
 
     def title(self):
-        return self.soup.schema.title()
+        return self.schema.title()
+
+    def total_time(self):
+        return 0
+
+    def yields(self):
+        return get_yields(
+            self.soup.find(
+                "div", {"class": "field field-name-field-ilosc-porcji field-type-text field-label-hidden"}
+            ).get_text()
+        )
+
+    def image(self):
+        container = self.soup.find("div", {
+            "class": "field field-name-zdjecie-z-linikem-do-bloga field-type-ds field-label-hidden"})
+        if not container:
+            return None
+
+        image = container.find("img", {"src": True})
+        return image["src"] if image else None
 
     def ingredients(self):
-        ingredients = self.soup.findAll("div", {
-            "class": "field field-name-field-przygotowanie field-type-text-long field-label-above"})
+        containers = self.soup.find("div", {
+            "class": "field field-name-field-skladniki field-type-text-long field-label-hidden"})
 
-        return [
-            normalize_string(i.get_text()) + " " + normalize_string(j.get_text())
-            for i, j in zip(ingredients[0::2], ingredients[1::2])
-        ]
+        ingredients = []
+
+        for container in containers:
+            if container.name == "div":
+                ingredients.append(container.get_text())
+            elif container.name == 'ul':
+                ingredients_part = container.findAll("li")
+                ingredients = ingredients + [ingredient.get_text() for ingredient in ingredients_part]
+            else:
+                continue
+
+        return [normalize_string(ingredient) for ingredient in ingredients]
 
     def instructions(self):
-        instructions = self.soup.findAll("p", {"class": "step-info-description"})
+        containers = self.soup.find("div", {
+            "class": "field field-name-field-przygotowanie field-type-text-long field-label-above"})
 
-        return "\n".join(
-            [normalize_string(instruction.get_text()) for instruction in instructions]
+        instructions = []
+
+        for container in containers:
+            if container.name == "div":
+                instructions.append(container.get_text())
+            elif container.name == 'ul':
+                instructions_part = container.findAll("li")
+                instructions = instructions + [ingredient.get_text() for ingredient in instructions_part]
+            else:
+                continue
+
+        return "\n".join([normalize_string(instruction) for instruction in instructions])
+
+    def description(self):
+        d = normalize_string(
+            self.soup.find("div", {
+                "class": "field field-name-field-uwagi-wstepne field-type-text-long field-label-hidden"}).get_text()
         )
+        return d if d else None
