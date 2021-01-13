@@ -130,9 +130,11 @@ from .whatsgabycooking import WhatsGabyCooking
 from .wholefoods import WholeFoods
 from .wikicookbook import WikiCookbook
 from .yummly import Yummly
+from .kwestiasmaku import KwestiaSmaku
 
 
 SCRAPERS = {
+    KwestiaSmaku.host(): KwestiaSmaku,
     Abril.host(): Abril,
     ACoupleCooks.host(): ACoupleCooks,
     AllRecipes.host(): AllRecipes,
