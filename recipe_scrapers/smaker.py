@@ -8,7 +8,7 @@ class Smaker(AbstractScraper):
     def host(cls):
         return "smaker.pl"
 
-    def author(self): #TODO
+    def author(self):  # TODO
         return self.schema.author()
 
     def title(self):
@@ -27,8 +27,21 @@ class Smaker(AbstractScraper):
     def ingredients(self):
         return self.schema.ingredients()
 
-    def instructions(self): #TODO
-        return self.schema.instructions()
+    def instructions(self):
+        container = self.soup.find("ol", {"class": "preparation"})
+        if not container:
+            return None
+
+        instructions = []
+
+        items = self.soup.findAll("li", {"itemprop": "itemListElement"})
+        for item in items:
+            instruction = item.find("p", {"itemprop": "itemListElement"})
+            if not instruction:
+                continue
+            instructions.append(normalize_string(instruction.get_text()))
+
+        return "\n".join(instructions)
 
     def ratings(self):
         return self.schema.ratings()
