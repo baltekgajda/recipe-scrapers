@@ -23,6 +23,7 @@ from .cdkitchen import CdKitchen
 from .chefkoch import Chefkoch
 from .closetcooking import ClosetCooking
 from .cookeatshare import CookEatShare
+from .cookidoo import Cookidoo
 from .cookieandkate import CookieAndKate
 from .cookpad import CookPad
 from .cookstr import Cookstr
@@ -156,6 +157,7 @@ SCRAPERS = {
     Chefkoch.host(): Chefkoch,
     ClosetCooking.host(): ClosetCooking,
     CookEatShare.host(): CookEatShare,
+    Cookidoo.host(): Cookidoo,
     CookieAndKate.host(): CookieAndKate,
     CookPad.host(): CookPad,
     Cookstr.host(): Cookstr,
