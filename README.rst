@@ -127,6 +127,7 @@ Scrapers available for:
 - `https://inspiralized.com/ <https://inspiralized.com>`_
 - `https://jamieoliver.com/ <https://jamieoliver.com>`_
 - `https://justbento.com/ <https://justbento.com>`_
+- `https://kotlet.tv/ <https://kotlet.tv/>`_
 - `https://kennymcgovern.com/ <https://kennymcgovern.com>`_
 - `https://www.kingarthurbaking.com <https://www.kingarthurbaking.com>`_
 - `https://kochbar.de/ <https://kochbar.de>`_
