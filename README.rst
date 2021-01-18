@@ -82,6 +82,7 @@ Scrapers available for:
 - `https://cookeatshare.com/ <https://cookeatshare.com/>`_
 - `https://cookieandkate.com/ <https://cookieandkate.com/>`_
 - `https://cookidoo.pl/ <https://cookidoo.pl/>`_
+- `https://craftlog.com/ <https://craftlog.com/>`_
 - `https://cookpad.com/ <https://cookpad.com/>`_
 - `https://cookstr.com/ <https://cookstr.com>`_
 - `https://copykat.com/ <https://copykat.com>`_
