@@ -1,5 +1,7 @@
 from ._abstract import AbstractScraper
 
+from ._utils import normalize_string
+
 
 class KuchniaLidla(AbstractScraper):
     @classmethod
@@ -25,7 +27,12 @@ class KuchniaLidla(AbstractScraper):
         return self.schema.ingredients()
 
     def instructions(self):
-        return self.schema.instructions()
+        container = self.soup.find("div", {"id": "opis"})
+        if container is None:
+            return None
+
+        return "\n".join(
+            normalize_string(instruction.get_text()) for instruction in container.findAll("p"))
 
     def ratings(self):
         return self.schema.ratings()

@@ -50,8 +50,10 @@ class TestKuchniaLidlaScraper(ScraperTest):
             [
                 "Bułkę zalewamy mlekiem lub wodą i odstawiamy na ok. 10-15 minut.",
                 "Na patelni, na rozgrzanym oleju smażymy cebulę pokrojoną w kostkę, aż się zarumieni. Odstawiamy do wystudzenia.",
-                "W dużej misce łączymy mięso mielone z podsmażoną cebulą. Dodajemy bułkę dokładnie odciśniętą z mleka, jajko, sól, pieprz, oregano i tymianek. Całość wyrabiamy dłonią, aż mięso połączy się z pozostałymi składnikami w jednolitą masę. Jeśli masa okaże się zbyt sucha, dodajemy odrobinę wody i ponownie wyrabiamy. Jeśli uzyskamy zbyt rzadką masę, dodajemy 1 łyżkę bułki tartej i ponownie wyrabiamy całość, aż do uzyskania pożądanej konsystencji.",
-                "Z dokładnie wyrobionego mięsa formujemy owalne, lekko spłaszczone kotlety i obtaczamy je w bułce tartej. Mielone smażymy na patelni, na rozgrzanym smalcu (lub maśle klarowanym) ok. 3-4 minut z każdej strony – początkowo na dużym ogniu, który po kilku chwilach zmniejszamy.Podajemy z ugotowanymi, młodymi ziemniakami i mizerią. Z wierzchu posypujemy świeżym, drobno posiekanym koperkiem.",
+                "W dużej misce łączymy mięso mielone z podsmażoną cebulą. Dodajemy bułkę dokładnie odciśniętą z mleka, jajko, sól, pieprz, oregano i tymianek. Całość wyrabiamy dłonią, aż mięso połączy się z pozostałymi składnikami w jednolitą masę.",
+                "Jeśli masa okaże się zbyt sucha, dodajemy odrobinę wody i ponownie wyrabiamy. Jeśli uzyskamy zbyt rzadką masę, dodajemy 1 łyżkę bułki tartej i ponownie wyrabiamy całość, aż do uzyskania pożądanej konsystencji.",
+                "Z dokładnie wyrobionego mięsa formujemy owalne, lekko spłaszczone kotlety i obtaczamy je w bułce tartej. Mielone smażymy na patelni, na rozgrzanym smalcu (lub maśle klarowanym) ok. 3-4 minut z każdej strony – początkowo na dużym ogniu, który po kilku chwilach zmniejszamy.",
+                "Podajemy z ugotowanymi, młodymi ziemniakami i mizerią. Z wierzchu posypujemy świeżym, drobno posiekanym koperkiem.",
             ]),
             self.harvester_class.instructions()
         )
