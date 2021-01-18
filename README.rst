@@ -140,6 +140,7 @@ Scrapers available for:
 - `https://lecremedelacrumb.com/ <https://lecremedelacrumb.com/>`_
 - `https://marmiton.org/ <https://marmiton.org/>`_
 - `https://matprat.no/ <https://matprat.no/>`_
+- `https://www.mojewypieki.com/ <https://www.mojewypieki.com/>`_
 - `http://mindmegette.hu/ <http://mindmegette.hu/>`_
 - `https://minimalistbaker.com/ <https://minimalistbaker.com/>`_
 - `https://misya.info/ <https://misya.info>`_
