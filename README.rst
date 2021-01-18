@@ -131,6 +131,7 @@ Scrapers available for:
 - `https://www.kingarthurbaking.com <https://www.kingarthurbaking.com>`_
 - `https://kochbar.de/ <https://kochbar.de>`_
 - `https://kuchnia-domowa.pl/ <https://www.kuchnia-domowa.pl/>`_
+- `https://kuchnialidla.pl/ <https://kuchnialidla.pl/>`_
 - `https://www.kwestiasmaku.com <https://www.kwestiasmaku.com>`_
 - `https://littlespicejar.com/ <https://littlespicejar.com>`_
 - `http://livelytable.com/ <http://livelytable.com/>`_
