@@ -85,6 +85,7 @@ from .matprat import Matprat
 from .mindmegette import Mindmegette
 from .minimalistbaker import Minimalistbaker
 from .misya import Misya
+from .mojegotowanie import MojeGotowanie
 from .mojewypieki import MojeWypieki
 from .momswithcrockpots import MomsWithCrockPots
 from .motherthyme import MotherThyme
@@ -222,6 +223,7 @@ SCRAPERS = {
     LivelyTable.host(): LivelyTable,
     LeCremeDeLaCrumb.host(): LeCremeDeLaCrumb,
     Lovingitvegan.host(): Lovingitvegan,
+    MojeGotowanie.host(): MojeGotowanie,
     MojeWypieki.host(): MojeWypieki,
     PaleoRunningMomma.host(): PaleoRunningMomma,
     RachlMansfield.host(): RachlMansfield,
