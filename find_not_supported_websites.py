@@ -1,5 +1,6 @@
 import csv
 import regex
+from pprint import pprint
 from urllib.parse import urlparse
 
 csv_file_name = 'log-events-viewer-result.csv'
@@ -23,5 +24,5 @@ with open(csv_file_name) as csv_file:
                     hosts[host] = 1
             line_count += 1
 
-sortedUrls = dict(sorted(hosts.items(), key=lambda item: item[1], reverse=True))
-print(sortedUrls)
+sortedUrls = list((sorted(hosts.items(), key=lambda item: item[1], reverse=True)))
+pprint(sortedUrls)

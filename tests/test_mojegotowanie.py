@@ -10,7 +10,7 @@ class TestMojeGotowanieScraper(ScraperTest):
         self.assertEqual("mojegotowanie.pl", self.harvester_class.host())
 
     def test_author(self):
-        self.assertEqual("/uzytkownik/gastrosfera1", self.harvester_class.author())
+        self.assertEqual("gastrosfera1", self.harvester_class.author())
 
     def test_title(self):
         self.assertEqual("Mule w sosie serowo pomidorowym", self.harvester_class.title())
@@ -23,7 +23,7 @@ class TestMojeGotowanieScraper(ScraperTest):
 
     def test_image(self):
         self.assertEqual(
-            "https://www.mojegotowanie.pl/media/cache/default_view/uploads/media/recipe/0001/81/f7050ccb15de5360c5d63270ed9a11da463d14ee.jpeg",
+            "https://www.mojegotowanie.pl/uploads/media/recipe/0001/81/f7050ccb15de5360c5d63270ed9a11da463d14ee.jpeg",
             self.harvester_class.image())
 
     def test_ingredients(self):

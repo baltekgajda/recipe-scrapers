@@ -9,7 +9,11 @@ class MojeGotowanie(AbstractScraper):
         return "mojegotowanie.pl"
 
     def author(self):
-        return self.schema.author()
+        container = self.soup.find("div", {"class": "recipe-author"})
+        if container is None:
+            return ""
+
+        return container.find("a").get_text()
 
     def title(self):
         title = self.soup.find("meta", {"property": "og:title", "content": True})
@@ -25,25 +29,29 @@ class MojeGotowanie(AbstractScraper):
         return self.schema.image()
 
     def ingredients(self):
-        container = self.soup.find("ul", {"class": "recpie-ingredient-list"})
+        container = self.soup.find("div", {"class": "recpie-ingredient"})
         if container is None:
             return []
 
         return [normalize_string(ingredient.get_text()) for ingredient in container.findAll("li")]
 
     def instructions(self):
-        container = self.soup.find("ul", {"itemprop": "step"})
+        container = self.soup.find("div", {"class": "row preparationSteps"})
         if container is None:
-            return ""
+            return []
 
         instructions = []
+        for instruction in container.findAll('span'):
+            if not instruction.has_attr('class'):
+                instructions.append(normalize_string(instruction.get_text()))
+
+        if len(instructions) > 0:
+            return "\n".join(instructions)
+
         for instruction in container.findAll(['span', 'li'], {"itemprop": "name"}):
             instructions.append(normalize_string(instruction.get_text()))
         return "\n".join(instructions)
 
     def description(self):
-        description = self.soup.find("div", {"itemprop": "description"})
-        if not description:
-            return None
-
-        return description.get_text() if description else None
+        description = self.soup.find("meta", {"property": "og:description", "content": True})
+        return description.get("content")
