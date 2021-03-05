@@ -38,7 +38,7 @@ class MojeGotowanie(AbstractScraper):
     def instructions(self):
         container = self.soup.find("div", {"class": "row preparationSteps"})
         if container is None:
-            return []
+            return ""
 
         instructions = []
         for instruction in container.findAll('span'):
