@@ -92,6 +92,7 @@ from .motherthyme import MotherThyme
 from .mybakingaddiction import MyBakingAddiction
 from .myrecipes import MyRecipes
 from .nihhealthyeating import NIHHealthyEating
+from .noizz import Noizz
 from .nourishedbynutrition import NourishedByNutrition
 from .nutritionbynathalie import NutritionByNathalie
 from .nytimes import NYTimes
@@ -225,6 +226,7 @@ SCRAPERS = {
     Lovingitvegan.host(): Lovingitvegan,
     MojeGotowanie.host(): MojeGotowanie,
     MojeWypieki.host(): MojeWypieki,
+    Noizz.host(): Noizz,
     PaleoRunningMomma.host(): PaleoRunningMomma,
     RachlMansfield.host(): RachlMansfield,
     Smaker.host(): Smaker,
